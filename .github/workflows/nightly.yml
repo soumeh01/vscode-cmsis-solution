@@ -260,7 +260,9 @@ jobs:
         run: armlm activate --server https://mdk-preview.keil.arm.com --product KEMDK-COM0
 
       - name: Install Playwright
-        run: npx playwright install
+        run: |
+          npm install -D playwright@1.59.0
+          npx playwright install
 
       - name: Run Playwright tests
         id: tests
